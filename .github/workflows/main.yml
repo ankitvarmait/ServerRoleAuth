@@ -31,24 +31,24 @@ jobs:
       uses: actions/checkout@master
                      
     - name: Run Nuget restore
-      run: nuget restore $(solution)   
+      run: nuget restore "$(solution)"   
     
     - name: Setup MSBuild.exe
       uses: warrenbuckley/Setup-MSBuild@v1
 
     - name: MSBuild
       working-directory: src
-      run: msbuild '$(solution)'
+      run: msbuild "$(solution)"
       env:
-        solution: '$(solution)'
-        platform: '$(buildPlatform)'
-        configuration: '$(buildConfiguration)'
+        solution: "$(solution)"
+        platform: "$(buildPlatform)"
+        configuration: "$(buildConfiguration)"
                 
     - name: Run Tests
       run: VSTest@2
       env:
-        platform: '$(buildPlatform)'
-        configuration: '$(buildConfiguration)'
+        platform: "$(buildPlatform)"
+        configuration: "$(buildConfiguration)"
         testSelector: 'testAssemblies'
         testAssemblyVer2: '**\*test*.dll!**\*IntegrationTests.dll!**\*UiTests.dll!**\*TestAdapter.dll!**\obj\**\FunctionalTests\**'
 
