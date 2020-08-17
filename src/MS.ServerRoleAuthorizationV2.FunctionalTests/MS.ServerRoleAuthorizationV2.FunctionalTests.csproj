@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netcoreapp3.1;net472</TargetFrameworks>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="RoleBasedConfigurations.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="RoleBasedConfigurations.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0" />
+    <PackageReference Include="MSTest.TestAdapter" Version="2.1.0" />
+    <PackageReference Include="MSTest.TestFramework" Version="2.1.0" />
+    <PackageReference Include="coverlet.collector" Version="1.2.0" />
+    <PackageReference Include="Unity" Version="5.11.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MS.ServerRoleAuthorizationV2\MS.ServerRoleAuthorizationV2.csproj" />
+  </ItemGroup>
+
+</Project>

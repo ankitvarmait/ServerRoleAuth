@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.Contracts;
 using System.Linq;
 
 namespace MS.ServerRoleAuthorization
@@ -13,6 +14,8 @@ namespace MS.ServerRoleAuthorization
 
         public DefaultSetupConfigurations(ConfigurationOptions options)
         {
+            Contract.Requires(options != null, $"Parameter {nameof(options)} must be not null {options}.");
+
             this.LoadConfigurations(options.ConfigData);
             this.options = options;
         }
@@ -26,7 +29,7 @@ namespace MS.ServerRoleAuthorization
         {
             return roleConfigurations.Where(config =>
                 config.Roles.FirstOrDefault(roleConfigured =>
-                    roleConfigured.Equals(role, this.options.EnableIgnoreCaseMode ? StringComparison.OrdinalIgnoreCase : StringComparison.Ordinal) || roleConfigured.Equals(Constants.Asterisk)) != null);
+                    roleConfigured.Equals(role, options.EnableIgnoreCaseMode ? StringComparison.OrdinalIgnoreCase : StringComparison.Ordinal) || roleConfigured.Equals(Constants.Asterisk, StringComparison.CurrentCulture)) != null);
         }
 
         public ConfigurationOptions ConfigurationOptions()

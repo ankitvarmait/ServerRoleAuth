@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netcoreapp3.1;net472;netstandard2.0</TargetFrameworks>
+    <PackageId>ServerRoleAuth</PackageId>
+    <Authors>Ankit Varma</Authors>
+    <Product>MS.ServerRoleAuthorization</Product>
+    <Version>2.0.0</Version>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Copyright>Ankit Varma @2020</Copyright>
+    <SignAssembly>true</SignAssembly>
+    <PackageIcon>Icon.ico</PackageIcon>
+    <Company>Ankit Varma</Company>
+    <PackageLicenseExpression></PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/ankitvarmait/ServerRoleAuth</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/ankitvarmait/ServerRoleAuth</RepositoryUrl>
+    <PackageTags>ServerRole, Configuration, Auth</PackageTags>
+    <PackageReleaseNotes></PackageReleaseNotes>
+    <Description>Configure request based authorization at server side with simple configuration</Description>
+    <licenseUrl>https://github.com/ankitvarmait/ServerRoleAuth/blob/master/LICENSE</licenseUrl>
+    <RunAnalyzersDuringBuild>false</RunAnalyzersDuringBuild>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.9.6">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Icon.ico">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
