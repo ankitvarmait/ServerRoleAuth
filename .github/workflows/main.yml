@@ -8,14 +8,19 @@ on:
   push:
     branches: [ master ]
   pull_request:
-    branches: [ master ]
-       
+    branches: 
+      - '*'
+env:
+  solution: '**/*.sln'
+  buildPlatform: 'Any CPU'
+  buildConfiguration: 'Release'
+    
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -23,17 +28,27 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Setup Nuget.exe
-      uses: 
-        warrenbuckley/Setup-Nuget@v1        
-
-      
-    - name: Run Nuget setup
-      run: nuget restore MS.ServerRoleAuthorization.sln
-      
+      uses: actions/checkout@master
+                     
+    - name: Run Nuget restore
+      run: nuget restore MS.ServerRoleAuthorization.sln     
+    
     - name: Setup MSBuild.exe
       uses: warrenbuckley/Setup-MSBuild@v1
 
     - name: MSBuild
       working-directory: src
-      run: msbuild MS.ServerRoleAuthorization.sln
+      run: msbuild '$(solution)'
+      env:
+        solution: '$(solution)'
+        platform: '$(buildPlatform)'
+        configuration: '$(buildConfiguration)'
+                
+    - name: Run Tests
+      run: VSTest@2
+      env:
+        platform: '$(buildPlatform)'
+        configuration: '$(buildConfiguration)'
+        testSelector: 'testAssemblies'
+        testAssemblyVer2: '**\*test*.dll!**\*IntegrationTests.dll!**\*UiTests.dll!**\*TestAdapter.dll!**\obj\**\FunctionalTests\**'
 
