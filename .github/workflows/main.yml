@@ -38,9 +38,9 @@ jobs:
 
     - name: MSBuild
       working-directory: src
-      run: msbuild **/*.sln
+      run: msbuild src\MS.ServerRoleAuthorization\MS.ServerRoleAuthorization.sln
       env:
-        solution: '$(solution)'
+        solution: $(solution)
         platform: "Any CPU"
         configuration: "Release"
                 
