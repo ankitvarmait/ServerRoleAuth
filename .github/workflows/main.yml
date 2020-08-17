@@ -31,7 +31,7 @@ jobs:
       uses: actions/checkout@master
                      
     - name: Run Nuget restore
-      run: nuget restore "$(solution)"   
+      run: nuget restore MS.ServerRoleAuthorization.sln   
     
     - name: Setup MSBuild.exe
       uses: warrenbuckley/Setup-MSBuild@v1
