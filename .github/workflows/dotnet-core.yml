@@ -27,4 +27,4 @@ jobs:
       run: dotnet build src/MS.ServerRoleAuthorization.sln  --configuration Release --no-restore
     
     - name: Test
-      run: dotnet test --no-restore --verbosity normal
+      run: dotnet test src/MS.ServerRoleAuthorization.sln --no-restore --verbosity normal
