@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30320.27
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MS.ServerRoleAuthorizationV2", "..\MS.ServerRoleAuthorizationV2\MS.ServerRoleAuthorizationV2.csproj", "{59827293-93B5-4AEF-B016-7EEE097363BD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MS.ServerRoleAuthorization", "MS.ServerRoleAuthorization\MS.ServerRoleAuthorization.csproj", "{59827293-93B5-4AEF-B016-7EEE097363BD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MS.ServerRoleAuthorizationV2.FunctionalTests", "..\MS.ServerRoleAuthorizationV2.FunctionalTests\MS.ServerRoleAuthorizationV2.FunctionalTests.csproj", "{800BB482-7409-48F1-8DC0-78C6D8539FCE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MS.ServerRoleAuthorization.FunctionalTests", "MS.ServerRoleAuthorization.FunctionalTests\MS.ServerRoleAuthorization.FunctionalTests.csproj", "{800BB482-7409-48F1-8DC0-78C6D8539FCE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

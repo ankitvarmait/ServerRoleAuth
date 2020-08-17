@@ -1,4 +1,5 @@
 ﻿using MS.ServerRoleAuthorization.Contracts;
+using System;
 using Unity;
 using Unity.Injection;
 
@@ -14,6 +15,10 @@ namespace MS.ServerRoleAuthorization.FunctionalTests
 
         private void RegisterServerRoleComponents(string configData)
         {
+
+            //Action<Container> action;
+
+
             var options = new ConfigurationOptions(configData)
                 .WithIgnoreCaseMode(true);
             Container.RegisterType<ISetupConfigurations, DefaultSetupConfigurations>(new InjectionConstructor(options));

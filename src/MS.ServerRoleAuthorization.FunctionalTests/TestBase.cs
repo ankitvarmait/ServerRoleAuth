@@ -20,7 +20,7 @@ namespace MS.ServerRoleAuthorization.FunctionalTests
 
         internal string LoadConfig(string resourceName)
         {
-            resourceName = $"MS.ServerRoleAuthorizationV2.FunctionalTests.{resourceName}";
+            resourceName = $"MS.ServerRoleAuthorization.FunctionalTests.{resourceName}";
 
             var assembly = Assembly.GetExecutingAssembly();
             using (Stream stream = assembly.GetManifestResourceStream(resourceName))
