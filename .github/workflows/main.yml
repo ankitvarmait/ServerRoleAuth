@@ -37,10 +37,9 @@ jobs:
       uses: warrenbuckley/Setup-MSBuild@v1
 
     - name: MSBuild
-      working-directory: src
-      run: msbuild src\MS.ServerRoleAuthorization\MS.ServerRoleAuthorization.sln
+      run: msbuild src/MS.ServerRoleAuthorization/MS.ServerRoleAuthorization.sln
       env:
-        solution: $(solution)
+        solution: src/MS.ServerRoleAuthorization/MS.ServerRoleAuthorization.sln
         platform: "Any CPU"
         configuration: "Release"
                 
