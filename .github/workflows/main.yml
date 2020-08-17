@@ -38,11 +38,11 @@ jobs:
 
     - name: MSBuild
       working-directory: src
-      run: msbuild "$(solution)"
+      run: msbuild .\src\MS.ServerRoleAuthorization\MS.ServerRoleAuthorization.sln
       env:
-        solution: "$(solution)"
-        platform: "$(buildPlatform)"
-        configuration: "$(buildConfiguration)"
+        solution: .\src\MS.ServerRoleAuthorization\MS.ServerRoleAuthorization.sln
+        platform: "Any CPU"
+        configuration: "Release"
                 
     - name: Run Tests
       run: VSTest@2
