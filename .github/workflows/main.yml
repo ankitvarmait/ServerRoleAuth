@@ -43,11 +43,10 @@ jobs:
         platform: "Any CPU"
         configuration: "Release"
                 
-    - name: Run Tests
-      run: VSTest@2
-      env:
-        platform: "$(buildPlatform)"
-        configuration: "$(buildConfiguration)"
-        testSelector: 'testAssemblies'
-        testAssemblyVer2: '**\*test*.dll!**\*IntegrationTests.dll!**\*UiTests.dll!**\*TestAdapter.dll!**\obj\**\FunctionalTests\**'
+       
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v1.0.0
+      with:
+        name: published_webapp
+        path: bin\Release\Publish
 
