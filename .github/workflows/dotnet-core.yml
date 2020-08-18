@@ -44,7 +44,7 @@ jobs:
 
     
     - name: Pack
-      run: dotnet pack -v normal -c Release --no-restore --include-symbols --include-source -p:PackageVersion=$GITHUB_RUN_ID src/MS.ServerRoleAuthorization/MS.ServerRoleAuthorization.csproj
+      run: dotnet pack -v normal -c Release --no-restore --include-symbols --include-source -p:PackageVersion=$Env:GITHUB_RUN_ID src/MS.ServerRoleAuthorization/MS.ServerRoleAuthorization.csproj
       
     - name: Upload Artifact
       uses: actions/upload-artifact@v2
@@ -69,7 +69,7 @@ jobs:
           echo Version: $VERSION
           VERSION="${VERSION//v}"
           echo Clean Version: $VERSION
-          dotnet pack -v normal -c Release --include-symbols --include-source -p:PackageVersion=$VERSION -o nupkg src/MS.ServerRoleAuthorization/MS.ServerRoleAuthorization.csproj
+          dotnet pack -v normal -c Release --include-symbols --include-source -p:PackageVersion=$Env:VERSION -o nupkg src/MS.ServerRoleAuthorization/MS.ServerRoleAuthorization.csproj
       - name: Push to NuGet Feed
         run: dotnet nuget push ./nupkg/*.nupkg --source $NUGET_FEED --skip-duplicate --api-key $NUGET_KEY
 
