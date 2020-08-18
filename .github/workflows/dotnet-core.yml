@@ -64,12 +64,12 @@ jobs:
         
       - name: Create Release NuGet package
         run: |
-          arrTag=($Env:{GITHUB_REF//\// })
-          VERSION="${arrTag[2]}"
+          arrTag=($Env:{GITHUB_REF//\//})
+          VERSION="$Env:{arrTag[2]}"
           echo Version: $Env:VERSION
           VERSION="$Env:{VERSION//v}"
           echo Clean Version: $Env:VERSION
-          dotnet pack -v normal -c Release --include-symbols --include-source -p:Env:PackageVersion=$Env:VERSION -o nupkg src/MS.ServerRoleAuthorization/MS.ServerRoleAuthorization.csproj
+          dotnet pack -v normal -c Release --include-symbols --include-source -p:PackageVersion=$Env:VERSION -o nupkg src/MS.ServerRoleAuthorization/MS.ServerRoleAuthorization.csproj
       - name: Push to NuGet Feed
         run: dotnet nuget push ./nupkg/*.nupkg --source $Env:NUGET_FEED --skip-duplicate --api-key $Env:NUGET_KEY
 
