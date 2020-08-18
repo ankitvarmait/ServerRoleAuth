@@ -10,7 +10,6 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Copyright>Ankit Varma @2020</Copyright>
     <SignAssembly>true</SignAssembly>
-    <PackageIcon>Icon.ico</PackageIcon>
     <Company>Ankit Varma</Company>
     <PackageLicenseExpression></PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/ankitvarmait/ServerRoleAuth</PackageProjectUrl>
