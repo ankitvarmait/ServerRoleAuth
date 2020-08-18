@@ -54,7 +54,7 @@ jobs:
     
   deploy:
     needs: build    
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
       - name:  Setup .NET Core
@@ -63,13 +63,7 @@ jobs:
           dotnet-version: 3.1.301
         
       - name: Create Release NuGet package
-        run: |
-          arrTag=(${GITHUB_REF//\// })
-          VERSION="${arrTag[2]}"
-          echo Version: $VERSION
-          VERSION="${VERSION//v}"
-          echo Clean Version: $VERSION
-          dotnet pack -v normal -c Release --include-symbols --include-source -p:PackageVersion=$VERSION -o nupkg src/MS.ServerRoleAuthorization/MS.ServerRoleAuthorization.csproj
+        run: dotnet pack -v normal -c Release --include-symbols --include-source -p:PackageVersion=$Env:VERSION -o nupkg src/MS.ServerRoleAuthorization/MS.ServerRoleAuthorization.csproj
       - name: Push to NuGet Feed
         run: dotnet nuget push ./nupkg/*.nupkg --source $Env:NUGET_FEED --skip-duplicate --api-key $Env:NUGET_KEY
 
