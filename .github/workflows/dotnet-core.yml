@@ -26,7 +26,7 @@ jobs:
     - uses: actions/checkout@v2
      
     - name: print Varaible
-      run: echo "$GITHUB_RUN_ID" "$VERSION"
+      run: echo "$Env:GITHUB_RUN_ID" "$Env:VERSION" $Env:GITHUB_RUN_ID
      
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
