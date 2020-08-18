@@ -46,14 +46,15 @@ jobs:
     - name: Pack
       run: dotnet pack -v normal -c Release --no-restore --include-symbols --include-source -p:PackageVersion=$Env:GITHUB_RUN_ID src/MS.ServerRoleAuthorization/MS.ServerRoleAuthorization.csproj
       
-    - name: Push to NuGet Feed
-      run: dotnet nuget push src/MS.ServerRoleAuthorization/bin/Release/*.nupkg --source $Env:NUGET_FEED --skip-duplicate --api-key $Env:NUGET_KEY
-    
     - name: Upload Artifact
       uses: actions/upload-artifact@v2
       with:
         name: nupkg
         path: ./src/MS.ServerRoleAuthorization/bin/Release/*.nupkg
+        
+    - name: Push to NuGet Feed
+      run: dotnet nuget push ./src/MS.ServerRoleAuthorization/bin/Release/*.nupkg --source $Env:NUGET_FEED --skip-duplicate --api-key $Env:NUGET_KEY
+    
     
   # deploy:
    #  needs: build    
