@@ -6,10 +6,12 @@ on:
   pull_request:
     branches:
       - '*'
+
 env:
   
   # Project name to pack and publish
   PROJECT_NAME: ServerRoleAuth
+
 
   # Official NuGet Feed settings
   NUGET_FEED: https://api.nuget.org/v3/index.json
@@ -36,6 +38,7 @@ jobs:
     
     - name: Test
       run: dotnet test src/MS.ServerRoleAuthorization.sln --no-restore --verbosity normal
+
     
     - name: Pack
       run: dotnet pack -v normal -c Release --no-restore --include-symbols --include-source -p:PackageVersion=$GITHUB_RUN_ID src/MS.ServerRoleAuthorization/MS.ServerRoleAuthorization.csproj
@@ -66,3 +69,4 @@ jobs:
           dotnet pack -v normal -c Release --include-symbols --include-source -p:PackageVersion=$VERSION -o nupkg src/MS.ServerRoleAuthorization/MS.ServerRoleAuthorization.csproj
       - name: Push to NuGet Feed
         run: dotnet nuget push ./nupkg/*.nupkg --source $NUGET_FEED --skip-duplicate --api-key $NUGET_KEY
+
