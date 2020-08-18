@@ -53,7 +53,7 @@ jobs:
         path: ./src/MS.ServerRoleAuthorization/bin/Release/*.nupkg
         
     - name: Push to NuGet Feed
-      run: dotnet nuget push ./src/MS.ServerRoleAuthorization/bin/Release/*.nupkg --source $Env:NUGET_FEED --skip-duplicate --api-key $Env:NUGET_KEY
+      run: dotnet nuget push "**/*.nupkg" --source $Env:NUGET_FEED --skip-duplicate --api-key $Env:NUGET_KEY
     
     
   # deploy:
