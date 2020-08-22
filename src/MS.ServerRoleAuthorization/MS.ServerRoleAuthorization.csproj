@@ -5,7 +5,7 @@
     <PackageId>ServerRoleAuth</PackageId>
     <Authors>Ankit Varma</Authors>
     <Product>MS.ServerRoleAuthorization</Product>
-    <Version>2.0.0</Version>
+    <!--<Version>2.0.0</Version>-->
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Copyright>Ankit Varma @2020</Copyright>
@@ -19,6 +19,8 @@
     <Description>Configure request based authorization at server side with simple configuration</Description>
     <licenseUrl>https://github.com/ankitvarmait/ServerRoleAuth/blob/master/LICENSE</licenseUrl>
     <RunAnalyzersDuringBuild>false</RunAnalyzersDuringBuild>
+    <VersionPrefix>3.0.0</VersionPrefix>
+    <VersionSuffix>alpha</VersionSuffix>
   </PropertyGroup>
 
   <ItemGroup>
