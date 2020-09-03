@@ -7,11 +7,11 @@
 
 
 
-Configure request based authorization at server side with simple configurations.
+Configure request based authorization at server side with simple JSON based configurations.
 
 # Introduction 
 * ServerRoleAuth is the open-source .NET assembly library to handle server based authorization by role/request/subrequest/CustomerType.
-Configure roles with actions in simple json foramt and use it.
+Configure roles with actions in simple json format and use it.
 
 # Getting Started
 ## Build
