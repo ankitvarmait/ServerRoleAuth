@@ -1,5 +1,9 @@
 # ServerRoleAuth
-[![NuGet package](https://img.shields.io/nuget/v/ServerRoleAuth.svg)](https://www.nuget.org/packages/ServerRoleAuth/) ![Build status](https://github.com/ankitvarmait/ServerRoleAuth/workflows/.NET%20Core%20Pack/badge.svg?branch=master) ![Twitter Follow](https://img.shields.io/twitter/follow/AnkitVarmait.svg?label=Follow%20@AnkitVarmait)
+[![NuGet package](https://img.shields.io/nuget/v/ServerRoleAuth.svg)](https://www.nuget.org/packages/ServerRoleAuth/) ![Build status](https://github.com/ankitvarmait/ServerRoleAuth/workflows/.NET%20Core%20Pack/badge.svg?branch=master)
+[![GitHub release](https://img.shields.io/github/release/ankitvarmait/ServerRoleAuth.svg)](https://GitHub.com/ankitvarmait/ServerRoleAuth/releases)
+[![GitHub tag](https://img.shields.io/github/tag/ankitvarmait/ServerRoleAuth.svg)](https://GitHub.com/ankitvarmait/ServerRoleAuth/tags/)
+
+
 
 Configure request based authorization at server side with simple configurations.
 
@@ -25,3 +29,5 @@ Configure roles with actions in simple json foramt and use it.
 # Contribute
 Always welcome. Feel free to raise a request from GitHub.
 
+
+![Twitter Follow](https://img.shields.io/twitter/follow/AnkitVarmait.svg?label=Follow%20@AnkitVarmait)
