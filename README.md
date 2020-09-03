@@ -13,19 +13,19 @@ Configure request based authorization at server side with simple JSON based conf
   * Check incoming request by 
      * User Role.
      * Incomeing Request Name.
-     * Incoming Request -Sub Name (Any additional condition). 
-     * Customer Type.
+     * Incoming Request -Sub Name (any additional condition if any). 
+     * Customer Type/ Group type (if any).
      
 # Getting Started
 ## Build
-* Open solution `src/MS.ServerRoleAuthorization/MS.ServerRoleAuthorization.sln.`
-* Build.
+* Project Path `src/MS.ServerRoleAuthorization/MS.ServerRoleAuthorization.sln.`
+* Build. `dotnet build`
 
 ## Test
-* Open `src/MS.ServerRoleAuthorization/MS.ServerRoleAuthorization.sln.`
-* Build.
-* Open project `src/MS.ServerRoleAuthorization.FunctionalTests`
-* Run test(s) ServerRoleTests.
+* Project path `src/MS.ServerRoleAuthorization/MS.ServerRoleAuthorization.sln.`
+* Build. `dotnet build`
+* Test project pah`src/MS.ServerRoleAuthorization.FunctionalTests`
+* Run test(s) ServerRoleTests. `dotnet test`
 
 ## How to use
 * [How To configure Role based configurations](https://github.com/ankitvarmait/ServerRoleAuth/blob/master/Docs/ConfigureJson.md)
