@@ -17,33 +17,34 @@
  ]
 ]
 ````
-* Request : RequestName or api name or public method name defined at server
-* RequestSubType: Optional: An additional parameter to consider auth handling.
-* Use * to define condition for all.
-* Group: group all configurations, for examples Group1 has different configurations than Group2.
-  You can use * if you dont want to consider. 
+* Request : RequestName or api name or public method name defined at server side.
+* RequestSubType: [optional]: An additional parameter to consider along with Request.
+* Group:[optional]: Multiple configurations for multiple system or customers.  
+  * For example: Group1 has different configurations than Group2.
   Use case: 
-    1. Server supports two types of customers: customer 1 and customer 2.
-    2. For customer 1, roles are different than customer 2, also access can be different.
-    3. use group for this case
-
+    1. Server supports two( can be added more as well) types of customers: customer1 and customer2.
+    2. Roles and access are different for customer1 than customer2.
+    3. Roles can be diffrent based on the region or location etc.
+  
+ * Use `*` in case for an optional parameter or should be consider for all.
+ 
 E.g.
-  * Consider for all roles:  
+  * Valide for all roles:  
   
   ```json
      "Roles" : ["*"]
    ```
-   * Cosider for all requests:
+   * Valid for all requests:   
    ```json
      "Request": "*"
-   ```
-    * Cosider for all sub requests:
+   ```   
+   * Valid for all sub requests:
    ```json
      "RequestSubType": "*"
    ```
    
-  * Define Role1 should have access to all requests. 
-  RequestSubType is an optional param in case we want to control with additional parameter.
+  * Define Role4 should have access to all requests. 
+    * RequestSubType is an optional param in case we want to control with additional parameter.
 
   ```json
 	{
@@ -119,3 +120,36 @@ E.g.
 	    ]
 	 }
    ```
+   
+   * Define Role 4 is allowed to access both read and write of Emmployee records if belongs to region 1, if belongs to region 2 only read access of Emmployee records.
+   
+   ```json
+   [{   
+     "Group": "Region 1",
+     "RoleConfigurations": 
+     [
+        {
+	   "Roles": ["Role 4"],
+	   "SupportedActions": [
+	     "Request" : "Employee",
+	     "RequestSubType" : "*"
+	   ]
+	}
+     ]},
+     {
+     "Group": "Region 2",
+     "RoleConfigurations": 
+     [
+        {
+	   "Roles": ["Role 4"],
+	   "SupportedActions": [
+	     "Request" : "Employee",
+	     "RequestSubType" : "Read"
+	   ]
+	}
+     ]}     
+   ]
+   
+   ```
+   
+   
