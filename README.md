@@ -36,6 +36,7 @@ Configure request based authorization at server side with simple JSON based conf
 ## How to use it:
 * [How to configure Role based configurations](https://github.com/ankitvarmait/ServerRoleAuth/blob/master/Docs/ConfigureJson.md)
 * [How start changes at Server Side](https://github.com/ankitvarmait/ServerRoleAuth/blob/master/Docs/ServerSideChanges.md) 
+* [Full sample](https://github.com/ankitvarmait/ServerRoleAuth/blob/master/Docs/FullSample.md) 
 
 ## How to customize it:
 ### Build
