@@ -23,6 +23,9 @@ namespace MS.ServerRoleAuthorization.FunctionalTests
          *      4. Role 4 can access to all requests.
          * For system 2:
          *     1. All roles are allowed to access all requests.
+         * For system 2:
+         *     1. All roles are allowed to access all requests but not admin related requests.
+         *     2. Admin role can access to all requests including admin requests.
          */
 
         [TestMethod]
@@ -82,6 +85,16 @@ namespace MS.ServerRoleAuthorization.FunctionalTests
             Assert.IsTrue(ruleEngine.IsAllowed("role4", "F", "System2"));
             Assert.IsTrue(ruleEngine.IsAllowed("role2", "F", "s", "System2"));
 
+
+            //for system 3
+            Assert.IsTrue(ruleEngine.IsAllowed("role4", "F", "System3"));
+            Assert.IsTrue(ruleEngine.IsAllowed("role2", "F", "s", "System3"));
+            Assert.IsFalse(ruleEngine.IsAllowed("role4", "Admin", "System3"));
+            Assert.IsFalse(ruleEngine.IsAllowed("role2", "Admin", "Get", "System3"));
+            Assert.IsTrue(ruleEngine.IsAllowed("Admin", "Admin", "System3"));
+            Assert.IsTrue(ruleEngine.IsAllowed("Admin", "Admin", "Get", "System3"));
+            Assert.IsTrue(ruleEngine.IsAllowed("Admin", "F", "System3"));
+            Assert.IsTrue(ruleEngine.IsAllowed("Admin", "F", "s", "System3"));
         }
     }
 }

@@ -60,5 +60,33 @@
         ]
       }
     ]
+  },
+  {
+    "Group": "System3",
+    "RoleConfigurations": [
+      {
+        "Roles": [ "*" ],
+        "SupportedActions": [
+          {
+            "Request": "*"
+          }
+        ],
+        "NotSupportedActions": [
+          {
+            "Request": "Admin",
+            "RequestSubType": "*"
+          }
+        ]
+      },
+      {
+        "Roles": [ "Admin" ],
+        "SupportedActions": [
+          {
+            "Request": "*",
+            "RequestSubType": "*"
+          }
+        ]
+      }
+    ]
   }
 ]

@@ -14,7 +14,7 @@ namespace MS.ServerRoleAuthorization
 
             if (asteriskRoleConfigurations != null)
             {
-                result = SupportedActionsHelper.IsActionConfigured(action.Action, action.SubAction, asteriskRoleConfigurations.SupportedActions, configurationOptions);
+                result = SupportedActionsHelper.IsActionConfigured(action.Action, action.SubAction, asteriskRoleConfigurations.SupportedActions, asteriskRoleConfigurations.NotSupportedActions, configurationOptions);
             }
 
             if (!result)
@@ -24,7 +24,7 @@ namespace MS.ServerRoleAuthorization
 
                 foreach (var cR in otherRoleConfigurations)
                 {
-                    result = SupportedActionsHelper.IsActionConfigured(action.Action, action.SubAction, cR.SupportedActions, configurationOptions);
+                    result = SupportedActionsHelper.IsActionConfigured(action.Action, action.SubAction, cR.SupportedActions, cR.NotSupportedActions, configurationOptions);
 
                     if (result)
                     {

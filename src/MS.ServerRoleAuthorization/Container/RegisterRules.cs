@@ -5,8 +5,15 @@ using Unity.Injection;
 
 namespace MS.ServerRoleAuthorization
 {
+    /// <summary>
+    /// Register rules to validate auth.
+    /// </summary>
     public static class RegisterRules
     {
+        /// <summary>
+        /// Setup SetupConfiguration
+        /// </summary>
+        /// <param name="configurationOptions"></param>
         public static void SetupConfiguration(ConfigurationOptions configurationOptions)
         {
             Contract.Requires(configurationOptions != null, $"Parameter {nameof(configurationOptions)} must be not null {configurationOptions}.");

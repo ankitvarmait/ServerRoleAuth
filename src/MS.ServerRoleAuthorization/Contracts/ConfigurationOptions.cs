@@ -34,8 +34,19 @@ namespace MS.ServerRoleAuthorization.Contracts
             return option;
         }
 
+        /// <summary>
+        /// Container to register the dependencies.
+        /// </summary>
         public IUnityContainer Container { get; private set; }
+
+        /// <summary>
+        /// Role based configurations.
+        /// </summary>
         public string ConfigData { get; private set; }
+
+        /// <summary>
+        /// True, if perform ignore case.
+        /// </summary>
         public bool EnableIgnoreCaseMode { get; private set; } = true;
 
         private ConfigurationOptions Clone(ConfigurationOptions source)

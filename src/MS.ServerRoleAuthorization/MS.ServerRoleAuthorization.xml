@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MS.ServerRoleAuthorization</name>
+    </assembly>
+    <members>
+        <member name="T:MS.ServerRoleAuthorization.RegisterRules">
+            <summary>
+            Register rules to validate auth.
+            </summary>
+        </member>
+        <member name="M:MS.ServerRoleAuthorization.RegisterRules.SetupConfiguration(MS.ServerRoleAuthorization.Contracts.ConfigurationOptions)">
+            <summary>
+            Setup SetupConfiguration
+            </summary>
+            <param name="configurationOptions"></param>
+        </member>
+        <member name="T:MS.ServerRoleAuthorization.Contracts.ConfigurationOptions">
+            <summary>
+            Defines set of configurations to setup role based authorization.
+            </summary>
+        </member>
+        <member name="M:MS.ServerRoleAuthorization.Contracts.ConfigurationOptions.#ctor(Unity.IUnityContainer,System.String)">
+            <summary>
+            Setup up role based authorization.
+            </summary>
+            <param name="container">The unity container to register dependencies.</param>
+            <param name="configData">The serialized configuration data.</param>
+        </member>
+        <member name="M:MS.ServerRoleAuthorization.Contracts.ConfigurationOptions.WithIgnoreCaseMode(System.Boolean)">
+            <summary>
+            Setup up role based authorization with ignore case mode.
+            </summary>
+            <remarks>
+            role1 == Role1 = ROLE1 if set with 'true'.
+            </remarks>
+            <param name="enableIgnoreCaseMode">Set to true for ignore case.</param>
+            <returns></returns>
+        </member>
+        <member name="P:MS.ServerRoleAuthorization.Contracts.ConfigurationOptions.Container">
+            <summary>
+            Container to register the dependencies.
+            </summary>
+        </member>
+        <member name="P:MS.ServerRoleAuthorization.Contracts.ConfigurationOptions.ConfigData">
+            <summary>
+            Role based configurations.
+            </summary>
+        </member>
+        <member name="P:MS.ServerRoleAuthorization.Contracts.ConfigurationOptions.EnableIgnoreCaseMode">
+            <summary>
+            True, if perform ignore case.
+            </summary>
+        </member>
+        <member name="T:MS.ServerRoleAuthorization.IRuleEngine">
+            <summary>
+            The engine that validates role with allowed requests.
+            </summary>
+        </member>
+        <member name="M:MS.ServerRoleAuthorization.IRuleEngine.IsAllowed(System.String,System.String,System.String,System.String)">
+            <summary>
+            Check if given <paramref name="role"/> is allowed to access to <paramref name="actionName"/> and <paramref name="subActionName"/> for <paramref name="group"/>.
+            </summary>
+        </member>
+        <member name="M:MS.ServerRoleAuthorization.IRuleEngine.IsAllowed(System.String,System.String,System.String)">
+            <summary>
+            <inheritdoc cref="M:MS.ServerRoleAuthorization.IRuleEngine.IsAllowed(System.String,System.String,System.String,System.String)"/>
+            </summary>
+        </member>
+    </members>
+</doc>

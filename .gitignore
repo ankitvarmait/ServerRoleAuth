@@ -21,3 +21,4 @@ bld/
 /src/MS.ServerRoleAuthorization/packages
 *.testlog
 /src/.vs/MS.ServerRoleAuthorization/v16/TestStore/0/testlog.manifest
+/src/.vs/MS.ServerRoleAuthorization/DesignTimeBuild

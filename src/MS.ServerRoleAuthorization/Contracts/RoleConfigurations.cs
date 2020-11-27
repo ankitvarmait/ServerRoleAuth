@@ -10,5 +10,8 @@ namespace MS.ServerRoleAuthorization.Contracts
     {
         public string[] Roles { get; set; }
         public SupportedActions[] SupportedActions { get; set; }
+
+        public SupportedActions[] NotSupportedActions { get; set; }
+
     }
 }
