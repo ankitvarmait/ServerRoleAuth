@@ -19,7 +19,7 @@
     <Description>Configure request based authorization at server side with simple configuration</Description>
     <licenseUrl>https://github.com/ankitvarmait/ServerRoleAuth/blob/master/LICENSE</licenseUrl>
     <RunAnalyzersDuringBuild>false</RunAnalyzersDuringBuild>
-    <VersionPrefix>4.0.0</VersionPrefix>
+    <VersionPrefix>4.0.1</VersionPrefix>
     <VersionSuffix>alpha</VersionSuffix>
   </PropertyGroup>
 
@@ -32,8 +32,8 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
-    <PackageReference Include="Unity" Version="5.11.7" />
+    <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
+    <PackageReference Include="Unity" Version="5.11.4" />
   </ItemGroup>
 
   <ItemGroup>
