@@ -41,7 +41,7 @@ jobs:
 
     
     - name: Pack
-      run: dotnet pack -v normal -c Release --no-restore --include-symbols --include-source -P:version="3.0.1" src/MS.ServerRoleAuthorization/MS.ServerRoleAuthorization.csproj
+      run: dotnet pack -v normal -c Release --no-restore --include-symbols --include-source -P:version="4.0.0" src/MS.ServerRoleAuthorization/MS.ServerRoleAuthorization.csproj
       
     - name: Upload Artifact
       uses: actions/upload-artifact@v2
