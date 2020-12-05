@@ -27,7 +27,12 @@ Configure request based authorization at server side with simple JSON based conf
 			{
 			  "Request": "",
 			   "RequestSubType": ""
-			}]
+			}],
+		   "NotSupportedActions": [
+			{
+			  "Request": "",
+			   "RequestSubType": ""
+			}],
 		}]
 	  ]
 	 ```
